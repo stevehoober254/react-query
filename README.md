@@ -13,26 +13,51 @@ Before getting started, ensure that you have the following installed:
 
 Follow these steps to get the project up and running on your local machine:
 
-1.Clone the repository:
-2. Navigate to the project directory:
-3. Install the dependencies:
-4. Start the JSON server:
-This will start a JSON server at `http://localhost:8000`.
-5. In a separate terminal, start the React application:
+- Clone the repository:
 
-This will start the React application at `http://localhost:3000`.
+```bash
 
-6.Open your browser and visit `http://localhost:3000` to see the application in action.
+   git clone https://github.com/stevehoober254/react-query.git
 
-## Usage
+   ```
 
-The application allows you to perform CRUD operations (Create, Read, Update, Delete) on a list of books. It uses React Query to manage the data fetching and caching.
+- Navigate to the project directory:
 
-- The list of books is displayed on the homepage.
-- You can add a new book by clicking the "Add Book" button and filling in the form.
-- Each book in the list has options to edit or delete the book.
-- Clicking the "Edit" button will take you to a form where you can update the book details.
-- Clicking the "Delete" button will remove the book from the list.
+```bash
+
+   cd react-query/
+
+   ```
+
+- Install the dependencies:
+
+```bash
+
+   npm install
+
+   ```
+
+- Start the JSON server:
+
+```bash
+
+   npm run serve-json clone
+
+   ```
+
+This will start a JSON server at `http://localhost:3000`.
+
+- In a separate terminal, start the React application:
+
+```bash
+
+   npm run dev
+
+   ```
+
+This will start the React application at `http://localhost:5173`.
+
+6.Open your browser and visit `http://localhost:5173` to see the application in action.
 
 ## Project Structure
 

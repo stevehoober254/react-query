@@ -1,10 +1,10 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import axios from 'axios';
+import { fetchSuperHeroes } from '../hooks/useFetchSuperHeroes';
 
 
-const API_URL = "http://localhost:3000/superheroes3";
-const fetchSuperHeroes = () => axios.get(API_URL) 
+const API_URL = "http://localhost:3000/superheroes";
 
 export default function ReactQueryPage() {
 
