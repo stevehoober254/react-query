@@ -1,16 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 
-const API_URL = "http://localhost:3000/superheroes";
+const API_URL = "http://localhost:3000/superheroes1";
 
 export default function SuperHeroPage() {
     const [isLoading, setIsLoading] = useState(true);
     const [data, setData] = useState([]);
+    const [error, setError] = useState('');
 
     useEffect(() => {
 
-        axios.get(API_URL).then(response => {
+        axios.get(API_URL)
+        .then(response => {
             setData(response.data);
+            setIsLoading(false);
+        })
+        .catch(error => {
+            setError(error.message);
             setIsLoading(false);
         });
 
@@ -23,6 +29,14 @@ export default function SuperHeroPage() {
             </div>
         )
     }
+    if (error) {
+        return (
+            <div style={{ display: 'flex', justifyContent: 'center', alignContent: 'center', alignItems: 'center' }}>
+                <h1>{error}</h1>
+            </div>
+        )
+    }
+
     return (
         <div style={{paddingLeft:'30px'}}>
             <h1>Super Heros Page</h1>

@@ -3,17 +3,24 @@ import { useQuery } from 'react-query';
 import axios from 'axios';
 
 
-const API_URL = "http://localhost:3000/superheroes";
+const API_URL = "http://localhost:3000/superheroes3";
 const fetchSuperHeroes = () => axios.get(API_URL) 
 
 export default function ReactQueryPage() {
 
-    const { isLoading, data } = useQuery('super-heroes',fetchSuperHeroes );
+    const { isLoading, data, isError, error } = useQuery('super-heroes',fetchSuperHeroes );
 
     if (isLoading) {
         return (
             <div style={{ display: 'flex', justifyContent: 'center', alignContent: 'center', alignItems: 'center' }}>
                 <h1>Loading Data ...</h1>
+            </div>
+        )
+    }
+    if (isError) {
+        return (
+            <div style={{ display: 'flex', justifyContent: 'center', alignContent: 'center', alignItems: 'center' }}>
+                <h1>{error.message}</h1>
             </div>
         )
     }
