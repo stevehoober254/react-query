@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios';
 
-const API_URL = "http://localhost:3000/superheroes1";
+const API_URL = "http://localhost:3000/superheroes";
 
 export default function SuperHeroPage() {
     const [isLoading, setIsLoading] = useState(true);
